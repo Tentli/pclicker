@@ -1,0 +1,14 @@
+#canvas_div {
+    display: flex;
+    justify-content: left;
+}
+
+canvas {
+    width: 1067px;
+    height: 600px;
+    border-style: solid;
+}
+
+#hidden_images {
+    display: none; 
+}
