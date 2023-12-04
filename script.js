@@ -27,7 +27,7 @@ async function drawLayer(image_name) {
 
 async function drawBelly(image_name) {
     const ctx = myCanvas.getContext("2d"); 
-    ctx.drawImage(image_name, -i, 0, 1000, 900, 0, 0, 1067, 600);
+    ctx.drawImage(image_name, 0, 0, 1000, 900, i, 0, 1067, 600);
 }
 
 draw(); //this appears to be an acceptable way to call the function. 
