@@ -10,30 +10,62 @@
 
 <div id="top">
     <h1>Preggo Clicker</h1>
-    <p></p>
 </div>    
     
-<div id="canvas_div">
-    <canvas id="canvas" width="800" height="600"></canvas>
+<div id="canvas_div" class="disable-dbl-tap-zoom">
+    <button id="start_button" onclick = startGame() class="prevent-select">Start</button>
+    <canvas id="canvas" width="667" height="600"></canvas>
+    <button id="reset_button" onclick = resetGame() class="prevent-select">Reset</button>
 </div>
+
+<div id="main_text">
+    <p class="prevent-select">Welcome to the demo of Preggo Clicker, a game in which every click is a new day. </p>
+    <p>If you have questions, concerns, or suggestions, please send them to me at my <a href=https://ederit.itch.io> Itch.io</a> page or on my <a href=https://twitter.com/scrawler_ederit>Twitter (X?)</a>.</p> 
+</div>
+
     
 <div id="hidden_images">
     <img id="bg" src="Images/PClicker_bg.png" width="1400px" height="900px"/>
     <img id="bg_titty_1" src="Images/PClicker_bg_titty_1.png" width="1400px" height="900px"/>
     <img id="bg_titty_2" src="Images/PClicker_bg_titty_2.png" width="1400px" height="900px"/>
+    <img id="bg_titty_3" src="Images/PClicker_bg_titty_3.png" width="1400px" height="900px"/>
+    <img id="bg_titty_4" src="Images/PClicker_bg_titty_4.png" width="1400px" height="900px"/>
     <img id="belly_1" src="Images/PClicker_belly_1.png" width="1400px" height="900px"/>
     <img id="belly_2" src="Images/PClicker_belly_2.png" width="1400px" height="900px"/>
+    <img id="belly_3" src="Images/PClicker_belly_3.png" width="1400px" height="900px"/>
+    <img id="belly_4" src="Images/PClicker_belly_4.png" width="1400px" height="900px"/>
+    <img id="belly_5" src="Images/PClicker_belly_5.png" width="1400px" height="900px"/>
+    <img id="belly_6" src="Images/PClicker_belly_6.png" width="1400px" height="900px"/>
     <img id="fg_titty_1" src="Images/PClicker_fg_titty_1.png" width="1400px" height="900px"/>
     <img id="fg_titty_2" src="Images/PClicker_fg_titty_2.png" width="1400px" height="900px"/>
+    <img id="fg_titty_3" src="Images/PClicker_fg_titty_3.png" width="1400px" height="900px"/>
+    <img id="fg_titty_4" src="Images/PClicker_fg_titty_4.png" width="1400px" height="900px"/>
     <img id="fg" src="Images/PClicker_fg.png" width="1400px" height="900px"/>
 </div>
 
+<!-- Dev Tools:
 <p id="demo">000</p>
-<button onclick = resetButton()>Reset</button>
+<p id="eye">0</p>
+    <button onclick = addTen()>Add Ten</button>
+<br> 
+<button onclick = resetButton()>Load Start</button>
+<button onclick = startAt2()>Start at Belly 2</button>
+<button onclick = startAt3()>Start at Belly 3</button>
+<button onclick = startAt4()>Start at Belly 4</button>
+<button onclick = startAt5()>Start at Belly 5</button>
+<button onclick = startAt6()>Start at Belly 6</button>
+<br>
+<button onclick = goBack()>Go Back (buggy)</button>
+-->
     
-<script src="script.js"></script> <!-- This is an incredibly lazy way to make sure that the page loads before we run our script, but it seems to work lol -->
+<script src="script.js"></script>
     
 </body>
     
 </html>
+
+
+
+
+
 

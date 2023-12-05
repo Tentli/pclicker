@@ -1,14 +1,78 @@
+body {
+    width: max-width;
+}
+h1 {
+    font-family: Georgia;
+    margin: 20px;
+}
+p {
+    font-family: Georgia;
+}
+button {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: Georgia;
+    font-size: 30px;
+    letter-spacing: -6px;
+    padding: 0px;
+}
+
 #canvas_div {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#start_button {
+    width: auto;
+    float: center;
+}
+#reset_button {
+    width: auto;
+    float: center;
 }
 
 canvas {
-    width: 1067px;
-    height: 600px;
+/*    width: 667px;
+    height: 600px; */
     border-style: solid;
+    justify-content: auto;
+    float: center;
 }
 
 #hidden_images {
     display: none; 
+}
+
+#main_text {
+    background-color: #F0F0F0;
+    border-style: solid;
+    margin: 0px 20px 0px 20px;
+    padding: 20px;
+}
+
+
+
+
+/* For comfort when tapping rapidly on pc and mobile: */
+.prevent-select { 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+} /* ripped from w3schools.com/howto/howto_css_disable_text_selection.asp */
+.disable-dbl-tap-zoom { 
+  touch-action: manipulation;
+} /* from stackoverflow.com/a/53236027/16284893 */
+
+
+/* formatting links: */
+a:link {
+  color: #d00000;
+}
+a:visited {
+  color: #a00050;
+}
+a:hover {
+    color: red;
+    background-color: #e0e0e0;
 }
