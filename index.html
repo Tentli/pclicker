@@ -2,45 +2,122 @@
 <html>
 <head>
     <title>PClicker</title>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- adding jQuery by using the hosted version from Google -->
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
 
+    
 <div id="top">
-    <h1>Preggo Clicker</h1>
+    <h1>Clicker</h1>
 </div>    
+<div style="text-align: center">
+    <div id="pause_button" class="button_div">
+        <p class="button prevent-select" id="pause_button_text">Auto-Grow Off</p>
+    </div>
+</div>
     
 <div id="canvas_div" class="disable-dbl-tap-zoom">
-    <button id="start_button" onclick = startGame() class="prevent-select">Start</button>
-    <canvas id="canvas" width="667" height="600"></canvas>
-    <button id="reset_button" onclick = resetGame() class="prevent-select">Reset</button>
+    <canvas id="my_canvas"></canvas>
+</div>
+    
+<div style="text-align: center">  
+    <div id="go_to_bedroom_1_button" class="button_div">
+        <p class="button prevent-select">To Bedroom 1</p>
+    </div>
+    <div id="reset_button" class="button_div">
+        <p class="button prevent-select">Reset</p>
+    </div>
+    <div id="go_to_threshold_button" class="button_div">
+        <p class="button prevent-select">To Threshold</p>
+    </div>
+    <div id="test_button_1" class="button_div">
+        <p class="button prevent-select">Test1</p>
+    </div>
+    <div id="test_button_2" class="button_div">
+        <p class="button prevent-select">Test2</p>
+    </div>
+        
+</div>
+     
+<div id="info_button" class="button_div">
+    <p class="button prevent-select">Info</p>
 </div>
 
+<p id="tester">What's happenin?</p>
+<p id="tester2">Badaboom</p>
+<p id="tester3">tester3</p>
+    
+
 <div id="main_text">
-    <p class="prevent-select">Welcome to the demo of Preggo Clicker, a game in which every click is a new day. </p>
+    <p class="prevent-select">Welcome to the demo of Clicker, a point-and-click game.</p>
     <p>If you have questions, concerns, or suggestions, please send them to me at my <a href=https://ederit.itch.io> Itch.io</a> page or on my <a href=https://twitter.com/scrawler_ederit>Twitter (X?)</a>.</p> 
 </div>
 
+
+<div id="room_images" class="hidden_images">
+    <div id="light_div">
+        <img id="light_0" src="Images/Rooms/light/light_0.png"/>
+        <img id="light_1" src="Images/Rooms/light/light_1.png"/>
+        <img id="glowgloom" src="Images/Rooms/light/glowgloom.png"/>
+    </div>
+    <div id="threshold_div">
+        <img id="threshold_main" src="Images/Rooms/threshold/main.png"/>
+        <img id="threshold_rubble_staircase" src="Images/Rooms/threshold/rubble_staircase.png"/>
+        <img id="threshold_rubble_bedroom_2" src="Images/Rooms/threshold/rubble_bedroom_2.png"/>
+        <img id="threshold_dayglow" src="Images/Rooms/threshold/dayglow.png"/>
+    </div>
+    <div id="bedroom_1_div">
+        <img id="bedroom_1_main" src="Images/Rooms/bedroom_1/main.png"/>
+        <img id="bedroom_1_dayglow" src="Images/Rooms/bedroom_1/dayglow.png"/>    
+    </div>
+    <div id="front_door_div">
+        <img id="front_door_back" src="Images/Rooms/Front_Door/front_door_back.png"/>
+        <img id="front_door_door" src="Images/Rooms/Front_Door/front_door_door.png"/>
+        <img id="front_door_room" src="Images/Rooms/Front_Door/front_door_room.png"/>
+        <img id="boba" src="Images/Rooms/Front_Door/boba.png"/>
+    </div>
+    <div id="pantry_div">
+        <img id="pantry" src="Images/Rooms/Pantry/Pantry.png"/>
+        <img id="shelves" src="Images/Rooms/Shelves/Shelves.png"/>
+    </div>
+
+</div>
     
-<div id="hidden_images">
-    <img id="bg" src="Images/PClicker_bg.png" width="1400px" height="900px"/>
-    <img id="bg_titty_1" src="Images/PClicker_bg_titty_1.png" width="1400px" height="900px"/>
-    <img id="bg_titty_2" src="Images/PClicker_bg_titty_2.png" width="1400px" height="900px"/>
-    <img id="bg_titty_3" src="Images/PClicker_bg_titty_3.png" width="1400px" height="900px"/>
-    <img id="bg_titty_4" src="Images/PClicker_bg_titty_4.png" width="1400px" height="900px"/>
-    <img id="belly_1" src="Images/PClicker_belly_1.png" width="1400px" height="900px"/>
-    <img id="belly_2" src="Images/PClicker_belly_2.png" width="1400px" height="900px"/>
-    <img id="belly_3" src="Images/PClicker_belly_3.png" width="1400px" height="900px"/>
-    <img id="belly_4" src="Images/PClicker_belly_4.png" width="1400px" height="900px"/>
-    <img id="belly_5" src="Images/PClicker_belly_5.png" width="1400px" height="900px"/>
-    <img id="belly_6" src="Images/PClicker_belly_6.png" width="1400px" height="900px"/>
-    <img id="fg_titty_1" src="Images/PClicker_fg_titty_1.png" width="1400px" height="900px"/>
-    <img id="fg_titty_2" src="Images/PClicker_fg_titty_2.png" width="1400px" height="900px"/>
-    <img id="fg_titty_3" src="Images/PClicker_fg_titty_3.png" width="1400px" height="900px"/>
-    <img id="fg_titty_4" src="Images/PClicker_fg_titty_4.png" width="1400px" height="900px"/>
-    <img id="fg" src="Images/PClicker_fg.png" width="1400px" height="900px"/>
+<div id="character_images" class="hidden_images">
+    <div id="genevieve_div">
+        <img id="genevieve_back" src="Images/Characters/Genevieve/back.png"/>
+        <img id="genevieve_belly1" src="Images/Characters/Genevieve/belly1.png"/>
+        <img id="genevieve_belly2" src="Images/Characters/Genevieve/belly2.png"/>
+        <img id="genevieve_front1" src="Images/Characters/Genevieve/front1.png"/>
+        <img id="genevieve_belly3" src="Images/Characters/Genevieve/belly3.png"/>
+        <img id="genevieve_front2" src="Images/Characters/Genevieve/front2.png"/>
+        <img id="genevieve_belly4" src="Images/Characters/Genevieve/belly4.png"/>
+        <img id="genevieve_front3" src="Images/Characters/Genevieve/front3.png"/>
+        <img id="genevieve_front4" src="Images/Characters/Genevieve/front4.png"/>
+    </div>
+    
+</div>
+    
+<div id="lola_images" class="hidden_images">
+
+    <img id="bg" src="Images/Characters/Lola/PClicker_bg.png" width="1400px" height="900px"/>
+    <img id="bg_titty_1" src="Images/Characters/Lola/PClicker_bg_titty_1.png" width="1400px" height="900px"/>
+    <img id="bg_titty_2" src="Images/Characters/Lola/PClicker_bg_titty_2.png" width="1400px" height="900px"/>
+    <img id="bg_titty_3" src="Images/Characters/Lola/PClicker_bg_titty_3.png" width="1400px" height="900px"/>
+    <img id="bg_titty_4" src="Images/Characters/Lola/PClicker_bg_titty_4.png" width="1400px" height="900px"/>
+    <img id="belly_1" src="Images/Characters/Lola/PClicker_belly_1.png" width="1400px" height="900px"/>
+    <img id="belly_2" src="Images/Characters/Lola/PClicker_belly_2.png" width="1400px" height="900px"/>
+    <img id="belly_3" src="Images/Characters/Lola/PClicker_belly_3.png" width="1400px" height="900px"/>
+    <img id="belly_4" src="Images/Characters/Lola/PClicker_belly_4.png" width="1400px" height="900px"/>
+    <img id="belly_5" src="Images/Characters/Lola/PClicker_belly_5.png" width="1400px" height="900px"/>
+    <img id="belly_6" src="Images/Characters/Lola/PClicker_belly_6.png" width="1400px" height="900px"/>
+    <img id="fg_titty_1" src="Images/Characters/Lola/PClicker_fg_titty_1.png" width="1400px" height="900px"/>
+    <img id="fg_titty_2" src="Images/Characters/Lola/PClicker_fg_titty_2.png" width="1400px" height="900px"/>
+    <img id="fg_titty_3" src="Images/Characters/Lola/PClicker_fg_titty_3.png" width="1400px" height="900px"/>
+    <img id="fg_titty_4" src="Images/Characters/Lola/PClicker_fg_titty_4.png" width="1400px" height="900px"/>
+    <img id="fg" src="Images/Characters/Lola/PClicker_fg.png" width="1400px" height="900px"/>
 </div>
 
 <!-- Dev Tools:
